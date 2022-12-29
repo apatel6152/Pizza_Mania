@@ -15,7 +15,7 @@ const handler = (req, res) => {
           path: "/",
         })
       );
-      res.status(200).json("Succesfull");
+      res.status(200).json("Successfull");
     } else {
       res.status(400).json("Wrong Credentials!");
     }

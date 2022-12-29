@@ -1,4 +1,4 @@
-import dbConnect from "../../../utils/mongoConnect";
+import dbConnect from "../../../styles/utils/mongoConnect";
 import Order from "../../../models/Order";
 
 const handler = async (req, res) => {
