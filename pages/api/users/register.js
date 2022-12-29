@@ -1,4 +1,4 @@
-import dbConnect from '../../../styles/utils/mongoConnect';
+import dbConnect from '../../../utils/mongoConnect';
 import User from '../../../models/User';
 import bcrypt from "bcryptjs"
 

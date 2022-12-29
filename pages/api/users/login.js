@@ -1,4 +1,4 @@
-import dbConnect from '../../../styles/utils/mongoConnect';
+import dbConnect from '../../../utils/mongoConnect';
 import User from '../../../models/User';
 import bcrypt from 'bcryptjs';
 import jwt from "jsonwebtoken"
@@ -26,11 +26,11 @@ export default async function handler(req, res) {
           expiresIn: '7d',
         });
 
-        const { email, _id } = user;
+        const { email, _id, name } = user;
         console.log(token);
         res.status(201).json({
           token,
-          user: { email, _id },
+          user: { email, _id , name},
           message: 'login successful',
         });
       } else {

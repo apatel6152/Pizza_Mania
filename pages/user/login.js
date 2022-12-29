@@ -113,7 +113,9 @@ const Login = () => {
             className={styles.input}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <div className={styles.forgotpassword}>Forgot your password?</div>
+          <Link href="/user/forgetpassword">
+            <div className={styles.forgotpassword}>Forgot your password?</div>
+          </Link>
           <button className={styles.signinbtn} onClick={handleClick}>
             Login
           </button>
