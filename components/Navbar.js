@@ -26,24 +26,27 @@ const Navbar = () => {
 
   const quantity = useSelector((state) => state.cart.quantity);
 
-  // useEffect(() => {
-  //   session ? setUserState(session.user) : setUserState(user)
-    
-  //   // if (user) {
-  //   //   dispatch(loadUser(user.email, user))
-  //   // }
-  // }, [session])
-
   useEffect(() => {
+    session ? setUserState(session.user) : setUserState(user)
     if (user) {
       setisLoggedIn(true);
       setUserState(user);
     }
-    
-    // if (!user) {
-    //   router.push("/user/login")
+    // if (user) {
+    //   dispatch(loadUser(user.email, user))
     // }
-  }, [isLoggedIn,user])
+  }, [session, setUserState, setisLoggedIn, user])
+
+  // useEffect(() => {
+  //   if (user) {
+  //     setisLoggedIn(true);
+  //     setUserState(user);
+  //   }
+    
+  //   // if (!user) {
+  //   //   router.push("/users/login")
+  //   // }
+  // }, [setisLoggedIn])
 
   const logoutHandler = async () => {
     if (session) {
@@ -95,13 +98,13 @@ const Navbar = () => {
                 </Link>
               </>
             )} */}
-          {user ? (
+          {userState ? (
             <Link href="/user/login" passHref>
               <li className={styles.listItem} onClick={logoutHandler}>LogOut</li>
             </Link>
           ) : (
             <Link href="/user/login" passHref>
-              <li className={styles.listItem} onClick={logoutHandler}>LogIn</li>
+              <li className={styles.listItem} onClick={logoutHandler}>Login</li>
             </Link>
           )}
         </ul>
